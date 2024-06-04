@@ -1,0 +1,107 @@
+#sm
+  {
+      color: white;
+      margin-left: 12em;
+     
+  }
+
+body, html {
+   background-image: url('./reg2bg.jpg');
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+body, html {
+    height: 100%;
+  }
+  
+
+  #butt
+  {
+      margin-left: 15em;
+      margin-top: -5em;
+  }
+
+.form-group
+{
+    margin-left: 10em;
+    color:maroon;
+}
+.form-control
+{
+    margin-bottom:3%;
+
+}
+.input
+{
+    width:100px !important;
+}
+#hi
+{
+    margin-left: 25em;
+    width: 30em;
+    background: #f1f1f142;
+}
+#he
+{
+    margin-left: 25em;
+    width: 30em;
+    
+}
+#hii
+{
+    margin-left: 35em;
+    width: 10em;
+}
+#cl
+{
+    margin-top: 1em;
+}
+#hee
+{
+    margin-left: 10em;
+    margin-top: 0em;
+    color: white;
+    margin-top: 1em;
+}
+#foo
+{
+    margin-top: 2em;
+}
+
+/*body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+}
+
+div.form
+{
+    display: block;
+    text-align: center;
+}
+form
+{
+    border: 2px solid blue;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+*/
+body { text-align: center; }
+     /* center all items within body, this property is inherited */
+body > * { text-align: left; }
+     /* left-align the CONTENTS all items within body, additionally
+        you can add this text-align: left property to all elements
+        manually */
+form { display: inline-block; }
+     /* reduces the width of the form to only what is necessary */
+
+     .content {
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 10px;
+      }

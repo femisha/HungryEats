@@ -1,0 +1,15 @@
+.spacer{
+    flex: 2 2 auto;
+  }
+  #foo
+{
+  
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+body{
+  background-image: url("./fav1.jpg");
+  background-size: cover;
+}
+

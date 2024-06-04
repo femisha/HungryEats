@@ -1,0 +1,16 @@
+
+.spacer{
+    flex: 2 2 auto;
+}
+body{
+    background-image: url("./cart.jpg");
+    background-size: cover;
+}
+#foo
+{
+  
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  

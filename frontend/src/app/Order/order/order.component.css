@@ -1,0 +1,7 @@
+.spacer{
+    flex: 2 2 auto;
+  }
+  body{
+    background-image: url("./order1.jpg");
+    background-size: cover;
+  }

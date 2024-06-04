@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.8.2/css/all.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+
+<body id="bo">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#"><mat-icon><span class="material-icons-outlined">
+          local_dining
+          </span></mat-icon> HUNGRY EATS</a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+          
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </nav>
+    
+   <h1 id="hee" style="text-align:initial;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Sign Up</h1>
+
+    <div class="bootstrap" id="cl">
+    
+      <form #Registerform="ngForm" (ngSubmit)="registerUser()">
+        <!--<small [class.text-danger]="msg.status==500">{{msg.message}}</small>-->
+        <div class="form-group">
+          <label for="email"></label>
+          <input type="email" required class="form-control" placeholder="Enter email" name="email" [(ngModel)]="user.emailId" #email="ngModel"
+          [class.is-invalid]="email.invalid && email.touched"
+          >
+        <div *ngIf="email.errors && (email.invalid && email.touched) ">
+          <small class="text-danger" *ngIf="email.errors.required">Email Id is required</small>
+          <small class="text-danger" *ngIf="email.errors.pattern">Enter the valid emailId</small>
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="username"></label>
+          <input type="text" class="form-control" placeholder="Enter username" name="username" [(ngModel)]="user.userName" #username="ngModel" required
+          [class.is-invalid]="username.invalid && username.touched"
+          >
+          <small class="text-danger" [class.d-none]="username.valid || username.untouched"> Username isrequired </small>
+        </div>
+        <div class="form-group">
+          <label for="pwd"></label>
+          <input type="password" class="form-control" placeholder="Enter password" name="password" [(ngModel)]="user.password" #password="ngModel" required
+          [class.is-invalid]="password.invalid && password.touched"
+          >
+          <small class="text-danger" [class.d-none]="password.valid || password.untouched"> Password is required  </small>
+        </div>
+  
+        <div class="form-group">
+          <label for="pwd"></label>
+          <input type="password"  class="form-control"  placeholder="Enter confirm password" name="cpassword" #cpassword="ngModel"  (ngModel)="user.password" required 
+          [class.is-invalid]="password.invalid && password.touched"
+          >
+          <small style="color: white;" [class.d-none]="(cpassword.value == password.value) || cpassword.untouched"> Password & Confirm Password must be same </small>
+          </div>
+          <div class="form-group">
+            <label for="mobile"></label>
+            <input type="text"  class="form-control" placeholder="Enter Mobile Number" name="mobile" [(ngModel)]="user.mobile" #mobile="ngModel" required
+            [class.is-invalid]="mobile.invalid && mobile.touched"
+            >
+            <small class="text-danger" [class.d-none]="mobile.valid || mobile.untouched"> Mobile is required  </small>
+          </div>
+         <br>
+         <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <button [disabled]="Registerform.invalid" type="submit" (click)="fun()"  class="btn btn-success" id="butt">Register</button>
+             <br>
+              <div class="checkbox">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="remember" > <p style="color:white"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I agree to Hungry Eats Terms of Service, Privacy Policy and Content Policies</p>
+           </div>
+           
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a routerLink="/login"><b>  Sign in here</b></a>
+
+         
+
+          
+        
+      </form>
+    </div>
+</body>
+<footer id="foo" class="text-center text-white" style="background-color: #f1f1f1;">
+    <!-- Grid container -->
+    <div class="container pt-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <!-- Github -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright:
+      <a class="text-dark" routerLink="/login">All rights reserved</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</html>
